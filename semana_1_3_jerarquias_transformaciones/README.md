@@ -23,17 +23,24 @@ Este taller consistió en la implementación de sistemas jerárquicos de transfo
 
 ## Resultados visuales
 
-*(Los recursos se encuentran en la carpeta `media/`)*
+Todos los recursos se encuentran organizados en la carpeta `media/` siguiendo la convención de nomenclatura solicitada.
 
-### Three.js (Web)
+### 1. Implementación en Three.js (Web)
 
-* **Simulación Completa:**
-* **Interfaz de Usuario:**
+* **Captura de Interfaz:** Muestra el panel de control de Leva y la disposición inicial de la jerarquía bajo una iluminación puntual.
+![Captura Interfaz ThreeJS](./media/threejs_1_3_sc.png)
 
-### Unity (Motor de Juego)
+* **Simulación Orbital:** Demostración del movimiento relativo de la Luna orbitando al Planeta mientras este se traslada alrededor del Sol.
+![Simulación Orbital ThreeJS](./media/threejs_1_3_sistemasolar.gif)
 
-* **Animación Jerárquica:**
-* *Nota: La lógica de la jerarquía se valida mediante la rotación encadenada visible en la animación.*
+### 2. Implementación en Unity (HDRP)
+
+* **Sistema Solar en Movimiento:** Animación que evidencia la herencia de transformaciones y el sistema de sombras proyectadas en alta definición mediante el pipeline de HDRP.
+*Nota: Se observa la rotación del Sol (Padre) influyendo en la orientación de todo el sistema planetario.*
+![Animación Jerarquía Unity](./media/unity_1_3_sistemasolar.gif)
+
+* **Muestra de la jerarquía en Unity:** Muestra la jerarquía de objetos en Unity y la disposición inicial de la jerarquía bajo una iluminación puntual.
+![Jerarquía Unity](./media/unity_1_3_sc.png)
 
 ## Código relevante
 
@@ -58,23 +65,10 @@ Este taller consistió en la implementación de sistemas jerárquicos de transfo
 luna.RotateAround(planeta.position, Vector3.up, (velocidad * 2.5f) * Time.deltaTime);
 
 ```
-## Resultados visuales
-
-Todos los recursos se encuentran organizados en la carpeta media/ siguiendo la convención de nomenclatura solicitada.
-
-1. Implementación en Three.js (Web)
-* Captura de Interfaz (threejs_1_3_sc.png): Muestra el panel de control de Leva y la disposición inicial de la jerarquía bajo una iluminación puntual.
-
-* Simulación Orbital (threejs_1_3_sistemasolar.gif): Demostración del movimiento relativo de la Luna orbitando al Planeta mientras este se traslada alrededor del Sol.
-
-2. Implementación en Unity (HDRP)
-* Sistema Solar en Movimiento (unity_1_3_sistemasolar.gif): Animación que evidencia la herencia de transformaciones y el sistema de sombras proyectadas en alta definición mediante el pipeline de HDRP.
-* Muestra de la jerarquía en Unity (unity_1_3_sc.png): Muestra la jerarquía de objetos en Unity y la disposición inicial de la jerarquía bajo una iluminación puntual.
-Nota: Se observa la rotación del Sol (Padre) influyendo en la orientación de todo el sistema planetario.
 
 ## Prompts utilizados
 
-* Ayuda para que el `sol` se la fuente de luz de la escena y poner texturas al `planeta` y `luna`.
+* Ayuda para que el `sol` sea la fuente de luz de la escena y poner texturas al `planeta` y `luna`.
 * Ajuste del `Canvas Scaler` en Unity para resoluciones de alta gama.
 * Corrección de estilo `readme.md`.
 
@@ -82,3 +76,5 @@ Nota: Se observa la rotación del Sol (Padre) influyendo en la orientación de t
 
 * **Aprendizajes:** Comprender que la escala es una de las transformaciones más "peligrosas" en una jerarquía, ya que se multiplica a través de los hijos. También, la utilidad de los `groups` vacíos como pivotes de rotación.
 * **Dificultades:** Lograr que la **Point Light** del Sol proyectara sombras nítidas de la Tierra sobre la Luna en HDRP y configurar la UI para que no obstruyera la visión de la escena 3D.
+
+```
