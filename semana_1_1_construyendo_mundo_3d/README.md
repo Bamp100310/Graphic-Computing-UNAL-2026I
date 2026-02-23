@@ -82,3 +82,4 @@ Se utilizó asistencia de IA generativa para:
 * **Dificultades:** Lidiar con conflictos de versiones de dependencias (ESLint en React y Pyglet/Vedo en Python) y lograr un contraste de colores óptimo para que todos los elementos topológicos fueran legibles simultáneamente.
 
 ```
+
